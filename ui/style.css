@@ -23,6 +23,10 @@ body {
 }
 .a {
     text-align:center;
-    font-size:300%;
+    font-size:200%;
     padding-left:30px;
+}
+.image {
+    height:200px;
+    width:300px;
 }

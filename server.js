@@ -9,20 +9,25 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/page-1', function (req, res) {
-  res.sendFile(path.join(__dirname, '/', 'page-1.html'));
-});
-
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
-
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+app.get('/pages/page1.html', function(req, res) {
+    res.send("Page one Requested !!!!");   
+});
 
+app.get('/pages/page2.html', function(req, res) {
+    res.send("Page Two Requested !!!!!");
+});
+
+app.get('/pages/page3.html', function(req, res) {
+    res.send("Page Three Requested !!!!!");   
+});
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 

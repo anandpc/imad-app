@@ -1,4 +1,4 @@
-.container {
+body {
     font-family: sans-serif;
     background-color: lightgrey;
     margin-top: 75px;
@@ -18,8 +18,6 @@
     font-weight: bold;
 }
 
-.image{
-    height: 400px;
-    width: 500;
+.img-medium {
+    height: 200px;
 }
-

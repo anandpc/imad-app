@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var content = {
+var page1 = {
     title: 'Page 1 | Raspberry Pi',
     link: '<a href="/">Home</a>',
     heading: '<h2>Raspberry Pi</h2>',
@@ -19,6 +19,41 @@ var content = {
                     The Raspberry Pi is slower than a modern laptop or desktop but is still a complete Linux computer and can provides all the expected abilities that implies, at a low-power consumption level.    
                 </p>`
 };
+
+
+var htmlTemplate = `
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ${title}
+        </title>
+        <meta name ="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="/ui/style.css" rel="stylesheet"/>
+    </head>
+    
+    <body>
+        <div class="container">
+
+            ${link}
+            <hr>
+         
+            ${heading}
+            
+            <div class=image>
+                ${img}
+            </div>
+        
+            <div class="para">
+                ${content}
+            </div>
+        </div>
+    </body>
+</html>
+`;
+
+
 
 
 app.get('/', function (req, res) {

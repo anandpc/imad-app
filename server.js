@@ -20,39 +20,45 @@ var page1 = {
                 </p>`
 };
 
-
-var htmlTemplate = `
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            ${title}
-        </title>
-        <meta name ="viewport" content="width=device-width, initial-scale=1"/>
-        <link href="/ui/style.css" rel="stylesheet"/>
-    </head>
+function createTemplate (data){
+    var title = data.title;
+    var link = data.link;
+    var heading = data.heading;
+    var img = data.img;
+    var content = data.content;
     
-    <body>
-        <div class="container">
-
-            ${link}
-            <hr>
-         
-            ${heading}
-            
-            <div class=image>
-                ${img}
-            </div>
+    var htmlTemplate = `
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>
+                ${title}
+            </title>
+            <meta name ="viewport" content="width=device-width, initial-scale=1"/>
+            <link href="/ui/style.css" rel="stylesheet"/>
+        </head>
         
-            <div class="para">
-                ${content}
+        <body>
+            <div class="container">
+    
+                ${link}
+                <hr>
+             
+                ${heading}
+                
+                <div class=image>
+                    ${img}
+                </div>
+            
+                <div class="para">
+                    ${content}
+                </div>
             </div>
-        </div>
-    </body>
-</html>
-`;
-
+        </body>
+    </html>
+    `;
+    return htmlTemplate;
+}
 
 
 
@@ -69,7 +75,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/pages/page1.html', function(req, res) {
-    res.sendFile(path.join(__dirname, 'pages', 'page1.html'));   
+    res.send(createTemplate(page1));
 });
 
 app.get('/pages/page2.html', function(req, res) {

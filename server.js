@@ -86,6 +86,13 @@ function createTemplate (data){
     return htmlTemplate;
 }
 
+app.get('/:pageName', function (req, res){
+    
+    var pageName = req.params.pageName;
+    res.send(createTemplate(pages[pageName]));
+    
+});
+
 
 
 app.get('/', function (req, res) {
@@ -100,17 +107,6 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/pages/page1.html', function(req, res) {
-    res.send(createTemplate(page1));
-});
-
-app.get('/pages/page2.html', function(req, res) {
-    res.send(createTemplate(page2));
-});
-
-app.get('/pages/page3.html', function(req, res) {
-    res.send(createTemplate(page3));
-});
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 

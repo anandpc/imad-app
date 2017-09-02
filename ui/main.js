@@ -6,7 +6,7 @@ var marginLeft = 0 ;
 var marginRight = 0;
 
 function move(){
-    if(marginLeft == '1500px'){
+    if(marginLeft==1500+'px'){
         marginLeft = 0;
     }
   marginLeft = marginLeft + 10;

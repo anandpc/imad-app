@@ -87,7 +87,7 @@ function createTemplate (data){
 }
 
 
-app.get('/:pageName', function (req, res){
+app.get('/ui/:pageName', function (req, res){
     var pageName = req.params.pageName;
     res.send(createTemplate(pages[pageName]));
     

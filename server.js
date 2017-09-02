@@ -52,7 +52,6 @@ var page3 = {
 
 function createTemplate (data){
     var title = data.title;
-    var link = data.link;
     var heading = data.heading;
     var img = data.img;
     var content = data.content;
@@ -109,11 +108,11 @@ app.get('/pages/page1.html', function(req, res) {
 });
 
 app.get('/pages/page2.html', function(req, res) {
-    res.sendFile(path.join(__dirname, 'pages', 'page2.html'));
+    res.send(createTemplate(page2));
 });
 
 app.get('/pages/page3.html', function(req, res) {
-    res.sendFile(path.join(__dirname, 'pages', 'page3.html'));   
+    res.send(createTemplate(page3));
 });
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80

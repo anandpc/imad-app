@@ -6,19 +6,19 @@ var app = express();
 app.use(morgan('combined'));
 
 var pages = {
-    var page1: {
-        title: 'Page 1 | Raspberry Pi',
-        heading: '<h2>Raspberry Pi</h2>',
-        img: '<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Raspberry-Pi-3-Flat-Top.jpg" class="img-medium">',
-        content: `
-                    <p>
-                        A Raspberry Pi is a credit card-sized computer originally designed for education, inspired by the 1981 BBC Micro. Creator Eben Upton's goal was to create a low-cost device that would improve programming skills and hardware understanding at the pre-university level. But thanks to its small size and accessible price, it was quickly adopted by tinkerers, makers, and electronics enthusiasts for projects that require more than a basic microcontroller (such as Arduino devices).
-                    </p>
-                    <p>
-                        The Raspberry Pi is slower than a modern laptop or desktop but is still a complete Linux computer and can provides all the expected abilities that implies, at a low-power consumption level.    
-                    </p>`
-    },
-    var page2: {
+    page1: {
+            title: 'Page 1 | Raspberry Pi',
+            heading: '<h2>Raspberry Pi</h2>',
+            img: '<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Raspberry-Pi-3-Flat-Top.jpg" class="img-medium">',
+            content: `
+                        <p>
+                            A Raspberry Pi is a credit card-sized computer originally designed for education, inspired by the 1981 BBC Micro. Creator Eben Upton's goal was to create a low-cost device that would improve programming skills and hardware understanding at the pre-university level. But thanks to its small size and accessible price, it was quickly adopted by tinkerers, makers, and electronics enthusiasts for projects that require more than a basic microcontroller (such as Arduino devices).
+                        </p>
+                        <p>
+                            The Raspberry Pi is slower than a modern laptop or desktop but is still a complete Linux computer and can provides all the expected abilities that implies, at a low-power consumption level.    
+                        </p>`
+            },
+    page2: {
         title: 'Page 2 | Arduino',
         heading: '<h2>Arduino</h2>',
         img: '<img src="http://www.electroschematics.com/wp-content/uploads/2013/01/Arduino-Mega-2560-Pinout.jpg" class="img-medium">',
@@ -31,7 +31,7 @@ var pages = {
         
                     </p>`
     },
-    var page3: {
+    page3: {
         title: 'About Me | Anand Choudhary',
         heading: '<h2>Anand Choudhary</h2>',
         img: '<img src="http://anandpc13.imad.hasura-app.io/ui/madi.png" class="img-medium">',

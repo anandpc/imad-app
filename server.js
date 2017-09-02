@@ -5,50 +5,47 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var page1 = {
-    title: 'Page 1 | Raspberry Pi',
-    heading: '<h2>Raspberry Pi</h2>',
-    img: '<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Raspberry-Pi-3-Flat-Top.jpg" class="img-medium">',
-    content: `
-                <p>
-                    A Raspberry Pi is a credit card-sized computer originally designed for education, inspired by the 1981 BBC Micro. Creator Eben Upton's goal was to create a low-cost device that would improve programming skills and hardware understanding at the pre-university level. But thanks to its small size and accessible price, it was quickly adopted by tinkerers, makers, and electronics enthusiasts for projects that require more than a basic microcontroller (such as Arduino devices).
-                </p>
-                <p>
-                    The Raspberry Pi is slower than a modern laptop or desktop but is still a complete Linux computer and can provides all the expected abilities that implies, at a low-power consumption level.    
-                </p>`
+var pages = {
+    var page1: {
+        title: 'Page 1 | Raspberry Pi',
+        heading: '<h2>Raspberry Pi</h2>',
+        img: '<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Raspberry-Pi-3-Flat-Top.jpg" class="img-medium">',
+        content: `
+                    <p>
+                        A Raspberry Pi is a credit card-sized computer originally designed for education, inspired by the 1981 BBC Micro. Creator Eben Upton's goal was to create a low-cost device that would improve programming skills and hardware understanding at the pre-university level. But thanks to its small size and accessible price, it was quickly adopted by tinkerers, makers, and electronics enthusiasts for projects that require more than a basic microcontroller (such as Arduino devices).
+                    </p>
+                    <p>
+                        The Raspberry Pi is slower than a modern laptop or desktop but is still a complete Linux computer and can provides all the expected abilities that implies, at a low-power consumption level.    
+                    </p>`
+    },
+    var page2: {
+        title: 'Page 2 | Arduino',
+        heading: '<h2>Arduino</h2>',
+        img: '<img src="http://www.electroschematics.com/wp-content/uploads/2013/01/Arduino-Mega-2560-Pinout.jpg" class="img-medium">',
+        content: `
+                     <p>
+                        Arduino is an open-source electronics platform based on easy-to-use hardware and software. Arduino boards are able to read inputs - light on a sensor, a finger on a button, or a Twitter message - and turn it into an output - activating a motor, turning on an LED, publishing something online. You can tell your board what to do by sending a set of instructions to the microcontroller on the board. To do so you use the Arduino programming language (based on Wiring), and the Arduino Software (IDE), based on Processing.
+                    </p>
+                    <p>
+                        Over the years Arduino has been the brain of thousands of projects, from everyday objects to complex scientific instruments. A worldwide community of makers - students, hobbyists, artists, programmers, and professionals - has gathered around this open-source platform, their contributions have added up to an incredible amount of accessible knowledge that can be of great help to novices and experts alike.   
+        
+                    </p>`
+    },
+    var page3: {
+        title: 'About Me | Anand Choudhary',
+        heading: '<h2>Anand Choudhary</h2>',
+        img: '<img src="http://anandpc13.imad.hasura-app.io/ui/madi.png" class="img-medium">',
+        content: `
+                    <p>
+                        My name is already mentioned up here. I'm a BE Computer Graduate. Started Learning Web Development as of now from IMAD (Introduction to Modern Application Developmet).
+                    </p>
+                    <p>
+                        I myself don't know about my self. I'm on a research to discover myself.<br>
+                        That's all. Thank You.
+                    </p>
+                    `
+    }
 };
-
-var page2 = {
-    title: 'Page 2 | Arduino',
-    heading: '<h2>Arduino</h2>',
-    img: '<img src="http://www.electroschematics.com/wp-content/uploads/2013/01/Arduino-Mega-2560-Pinout.jpg" class="img-medium">',
-    content: `
-                 <p>
-                    Arduino is an open-source electronics platform based on easy-to-use hardware and software. Arduino boards are able to read inputs - light on a sensor, a finger on a button, or a Twitter message - and turn it into an output - activating a motor, turning on an LED, publishing something online. You can tell your board what to do by sending a set of instructions to the microcontroller on the board. To do so you use the Arduino programming language (based on Wiring), and the Arduino Software (IDE), based on Processing.
-                </p>
-                <p>
-                    Over the years Arduino has been the brain of thousands of projects, from everyday objects to complex scientific instruments. A worldwide community of makers - students, hobbyists, artists, programmers, and professionals - has gathered around this open-source platform, their contributions have added up to an incredible amount of accessible knowledge that can be of great help to novices and experts alike.   
-    
-                </p>`
-};
-
-var page3 = {
-    title: 'About Me | Anand Choudhary',
-    heading: '<h2>Anand Choudhary</h2>',
-    img: '<img src="http://anandpc13.imad.hasura-app.io/ui/madi.png" class="img-medium">',
-    content: `
-                <p>
-                    My name is already mentioned up here. I'm a BE Computer Graduate. Started Learning Web Development as of now from IMAD (Introduction to Modern Application Developmet).
-                </p>
-                <p>
-                    I myself don't know about my self. I'm on a research to discover myself.<br>
-                    That's all. Thank You.
-                </p>
-                `
-};
-
-
 
 function createTemplate (data){
     var title = data.title;

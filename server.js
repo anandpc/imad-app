@@ -5,6 +5,22 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var content = {
+    title: 'Page 1 | Raspberry Pi',
+    link: '<a href="/">Home</a>',
+    heading: '<h2>Raspberry Pi</h2>',
+    img: '<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Raspberry-Pi-3-Flat-Top.jpg" class="img-medium">',
+    content: `
+                <p>
+                    A Raspberry Pi is a credit card-sized computer originally designed for education, inspired by the 1981 BBC Micro. Creator Eben Upton's goal was to create a low-cost device that would improve programming skills and hardware understanding at the pre-university level. But thanks to its small size and accessible price, it was quickly adopted by tinkerers, makers, and electronics enthusiasts for projects that require more than a basic microcontroller (such as Arduino devices).
+                </p>
+                <p>
+                    The Raspberry Pi is slower than a modern laptop or desktop but is still a complete Linux computer and can provides all the expected abilities that implies, at a low-power consumption level.    
+                </p>`
+};
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });

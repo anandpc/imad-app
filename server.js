@@ -97,7 +97,7 @@ app.get('/:pageName', function (req, res){
 // Counter page
 var counter = 0;
 app.get('/counter', function(req, res){
-    couter = counter + 1;
+    counter = counter + 1;
     res.send(counter.toString());
 });
 

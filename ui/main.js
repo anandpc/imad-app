@@ -1,12 +1,8 @@
-console.log('Loaded!');
-
 var img = document.getElementById('madi');
-
-var marginLeft = 0 ; 
-var marginRight = 0;
+var marginLeft = 0 ;
 
 function move(){
-    if(marginLeft==1500+'px'){
+    if(img.style.marginLeft == 1500 +'px'){
         marginLeft = 0;
     }
   marginLeft = marginLeft + 10;

@@ -8,6 +8,7 @@ body {
 
 .center {
     text-align: center;
+    padding-left:900px;
 }
 
 .text-big {
@@ -19,7 +20,6 @@ body {
 }
 
 .img-medium {
-    
     height: 200px;
     width:300px;;
 }

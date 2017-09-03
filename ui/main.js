@@ -2,8 +2,8 @@ var img = document.getElementById('madi');
 var marginLeft = 0 ;
 
 function move(){
-    if(img.style.marginLeft == 1500 +'px'){
-        marginLeft = 0;
+    if(img.style.marginLeft == 1600 +'px'){
+        marginLeft = -1600;
     }
   marginLeft = marginLeft + 10;
   img.style.marginLeft = marginLeft + 'px';

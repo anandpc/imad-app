@@ -86,6 +86,12 @@ function createTemplate (data){
     return htmlTemplate;
 }
 
+// Counter page
+var counter = 0;
+app.get('/counter', function(req, res) {
+    counter = counter + 1;
+    res.send(counter.toString());
+});
 
 // express framework url mapping
 app.get('/:pageName', function (req, res){
@@ -94,12 +100,6 @@ app.get('/:pageName', function (req, res){
     
 });
 
-// Counter page
-var counter = 0;
-app.get('/counter', function(req, res) {
-    counter = counter + 1;
-    res.send(counter.toString());
-});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));

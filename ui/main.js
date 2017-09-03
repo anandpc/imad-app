@@ -1,3 +1,5 @@
+// Image Animation 
+
 var img = document.getElementById('madi');
 var marginLeft = 0 ;
 
@@ -11,4 +13,14 @@ function move(){
 
 img.onclick = function(){
     var interval = setInterval(move,50);
+};
+
+
+// counter Code
+
+var btn = document.getElementById('btn');
+btn.onclick = function(){
+    counter++;
+    var count = document.getElementById('count');
+    count.innerHTML = counter.toString();
 };

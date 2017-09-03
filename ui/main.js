@@ -20,7 +20,7 @@ img.onclick = function(){
 
 var btn = document.getElementById('btn');
 btn.onclick = function(){
-    counter++;
+    counter = counter + 1;
     var count = document.getElementById('count');
     count.innerHTML = counter.toString();
 };

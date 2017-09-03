@@ -87,12 +87,19 @@ function createTemplate (data){
 }
 
 
+// express framework url mapping
 app.get('/:pageName', function (req, res){
     var pageName = req.params.pageName;
     res.send(createTemplate(pages[pageName]));
     
 });
 
+// Counter page
+var counter = 0;
+app.get('/counter', function(req, res){
+    couter = counter + 1;
+    res.send(counter.toString());
+});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));

@@ -32,20 +32,12 @@ function load_counter() {
         request.send(null);
 }
 
-
-
-
-
 // Submit Names
-
 var nameInput = document.getElementById("name");
-var name1 = nameInput.value;
-
 function submit(){
-    
+    var name1 = nameInput.value;    
     // Make request to Server and Send Names
     var request = new XMLHttpRequest();
-    
     // Response to the request on state change
         request.onreadystatechange = function() {
             if(request.readyState == XMLHttpRequest.DONE) {

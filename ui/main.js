@@ -12,7 +12,6 @@ img.onclick  = function (){
     var interval = setInterval(move,50);
 };
 
-
 // counter Code
 function load_counter() {
     // Creating request Object.
@@ -33,19 +32,39 @@ function load_counter() {
         request.send(null);
 }
 
+
+
+
+
 // Submit Names
 
 
 function submit(){
     
     // Make request to Server and Send Names
+    var request = new XMLHttpRequest();
     
+    // Response to the request on state change
+        request.onreadystatechange = function() {
+            if(request.readyState == XMLHttpRequest.DONE) {
+                if(request.status == 200){
+                    names = request.responseText.parse();
+                    
+                }
+            }
+        };
+        
+        
     // Capture the Name and render it as list
-        var names = ['name1', 'name2', 'name3', 'name4'];
+        var names = [];
         var list = '';
         for(var i=0;i<names.length;i++){
             list += '<li>' + names[i] + '</li>';
         }
         var ul = document.getElementById("namelist");
         ul.innerHTML = list ;
+        
+        // Make a request
+        request.open('GET', 'http://anandpc13.imad.hasura-app.io/submit',true);
+        request.send(null);
 }   

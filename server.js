@@ -86,6 +86,16 @@ function createTemplate (data){
     return htmlTemplate;
 }
 
+// submit name
+var names = [];
+app.get('/submit', function(req, res){
+    // get the names from the request object
+    
+    var name;
+    names.push(name);
+    res.send(JSON.stringify(names)); // Responding Javascript object as string.
+});
+
 var counter = 0;
 app.get ('/counter', function(req, res){
     counter += 1;

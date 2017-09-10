@@ -86,13 +86,6 @@ function createTemplate (data){
     return htmlTemplate;
 }
 
-// Counter page
-var counter = 0;
-app.get('/counter', function(req, res) {
-    counter = counter + 1;
-    res.send(counter.toString());
-});
-
 // express framework url mapping
 app.get('/:pageName', function (req, res){
     var pageName = req.params.pageName;
@@ -100,8 +93,9 @@ app.get('/:pageName', function (req, res){
     
 });
 
+var counter = 0;
 app.get ('/counter', function(req, res){
-    counter = counter + 1;
+    counter += 1;
     res.send(counter.toString());
 });
 

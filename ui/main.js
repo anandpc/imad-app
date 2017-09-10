@@ -18,10 +18,10 @@ img.onclick = function(){
 
 // counter Code
 
-counter = 0;
+var counter = 0;
 var btn = document.getElementById('btn');
 btn.onclick = function(){
     counter = counter + 1;
-    var count = document.getElementById('count');
-    count.innerHTML = counter.toString();
+    var span = document.getElementById('count');
+    span.innerHTML = counter.toString();
 };

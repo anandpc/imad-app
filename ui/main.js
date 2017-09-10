@@ -1,4 +1,5 @@
 // Image Animation 
+var img = document.getElementById("madi");
 var marginLeft = 0 ;
 function move(){
     if(img.style.marginLeft == 2000 +'px'){
@@ -7,9 +8,9 @@ function move(){
   marginLeft = marginLeft + 10;
   img.style.marginLeft = marginLeft + 'px';
 }
-function animate(){
+img.onclick  = function (){
     var interval = setInterval(move,50);
-}
+};
 
 
 // counter Code

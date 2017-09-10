@@ -13,7 +13,7 @@
             <p>Click on the Image to move the Image</p>
             <p>Click repeatedly the Image to move it Faster</p>
             <div class="center">
-                <img src="/ui/madi.png" id = 'madi' class="img-medium"/>
+                <img src="/ui/madi.png" id = 'madi' class="img-medium" onclick="animate()"/>
             </div>
             <br>
             
@@ -28,8 +28,8 @@
             </div>
             <hr>
             <input type="text" placeholder="Enter Name" id="name">
-            <input type="submit" value="Submit">
-            <ul>
+            <input type="submit" value="Submit" onclick="submit()">
+            <ul id="namelist">
                 <li>Name 1</li>
                 <li>Name 2</li>
                 <li>Name 3</li>

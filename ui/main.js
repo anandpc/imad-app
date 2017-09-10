@@ -27,9 +27,7 @@ function load_counter() {
                     span.innerHTML = counter.toString();
                 }
             }
-            
         };
-        
         // Make a request
         request.open('GET', 'http://anandpc13.imad.hasura-app.io/counter',true);
         request.send(null);

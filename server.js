@@ -86,8 +86,8 @@ function createTemplate (data){
     return htmlTemplate;
 }
 
-/*var counter = 0;
-app.get ('/counter', function(req, res){
+var counter = 0;
+/*app.get ('/counter', function(req, res){
     counter += 1;
     res.send(counter.toString());
 });*/

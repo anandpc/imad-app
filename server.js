@@ -86,17 +86,17 @@ function createTemplate (data){
     return htmlTemplate;
 }
 
+var counter = 0;
+app.get ('/counter', function(req, res){
+    counter += 1;
+    res.send(counter.toString());
+});
+
 // express framework url mapping
 app.get('/:pageName', function (req, res){
     var pageName = req.params.pageName;
     res.send(createTemplate(pages[pageName]));
     
-});
-
-var counter = 0;
-app.get ('/counter', function(req, res){
-    counter += 1;
-    res.send(counter.toString());
 });
 
 app.get('/', function (req, res) {

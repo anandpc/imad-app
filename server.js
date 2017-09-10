@@ -88,11 +88,9 @@ function createTemplate (data){
 
 // submit name
 var names = [];
-app.get('/submit/:name', function(req, res){
+app.get('/submit', function(req, res){
     // get the names from the request object
-    name = req.params.name;
-    
-    var name;
+    var name = req.query.name;
     names.push(name);
     res.send(JSON.stringify(names)); // Responding Javascript object as string.
 });

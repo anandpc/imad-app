@@ -87,10 +87,10 @@ function createTemplate (data){
 }
 
 var counter = 0;
-/*app.get ('/counter', function(req, res){
+app.get ('/counter', function(req, res){
     counter += 1;
     res.send(counter.toString());
-});*/
+});
 
 // express framework url mapping
 app.get('/:pageName', function (req, res){

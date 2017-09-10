@@ -18,13 +18,13 @@ function load_counter() {
     // Creating request Object.
     var request = new XMLHttpRequest();
     
-    // request state change
+    // Response to the request on state change
         request.onreadystatechange = function() {
             if(request.readyState == XMLHttpRequest.DONE) {
                 if(request.status == 200){
                     var counter = request.responseText;
                     var span = document.getElementById('count');
-                     span.innerHTML = counter.toString();
+                    span.innerHTML = counter.toString();
                 }
             }
             

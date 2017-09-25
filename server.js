@@ -1,9 +1,18 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
 var app = express();
 app.use(morgan('combined'));
+
+// database connectivity
+var Pool = require('pg').Pool;
+var config = {
+  user: 'anandpc13',
+  host: 'localhost:5432',
+  database: 'anandpc13',
+  password: process.env.DB_PASSWORD,
+  port: 5432 
+};
 
 
 function createTemplate (data){
@@ -45,6 +54,21 @@ function createTemplate (data){
     return htmlTemplate;
 }
 
+
+var pool = new Pool(config);
+//database
+app.get('/db', function(req, res){
+    // make a select request
+    pool.query('select * from article', function(err, result){
+       if(err) {
+           res.status(500).send(err.toString());
+       } else{
+           res.send(JSON.stringify(result));
+       }
+    });
+    
+});
+
 // submit name
 var names = [];
 app.get('/submit', function(req, res){
@@ -54,6 +78,7 @@ app.get('/submit', function(req, res){
     res.send(JSON.stringify(names)); // Responding Javascript object as string.
 });
 
+// counter
 var counter = 0;
 app.get ('/counter', function(req, res){
     counter += 1;

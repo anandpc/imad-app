@@ -6,9 +6,10 @@ app.use(morgan('combined'));
 
 // database connectivity
 var Pool = require('pg').Pool;
+
 var config = {
   user: 'anandpc13',
-  host: 'http://db.imad.hasura-app.io',
+  host: 'http://db.imad.hasura-app.io/database.php?pgsql=localhost%3A5432&username=anandpc13&db=anandpc13&ns=public',
   database: 'anandpc13',
   password: process.env.DB_PASSWORD,
   port: '5432',

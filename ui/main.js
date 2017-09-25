@@ -21,7 +21,7 @@ function load_counter() {
         request.onreadystatechange = function() {
             if(request.readyState == XMLHttpRequest.DONE) {
                 if(request.status == 200){
-                    var counter = request.responseText;
+                    var counter = 50;
                     var span = document.getElementById('count');
                     span.innerHTML = counter.toString();
                 }

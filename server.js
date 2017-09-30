@@ -87,9 +87,20 @@ app.get ('/counter', function(req, res){
 });
 
 // express framework url mapping
-app.get('/:pageName', function (req, res){
-    var pageName = req.params.pageName;
-    res.send(createTemplate(pages[pageName]));
+app.get('/articles/:articleName', function (req, res){
+    
+    pool.query("select * from article WHERE title =' "+ req.params.articleName + "'", function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else if(result.rows.length === 0){
+            res.status(404).send(err.toString());
+        }else{
+            var articleData = result.rows[0];
+            res.send(createTemplate(articleData));        
+        }
+    });
+    
+    
     
 });
 

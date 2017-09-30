@@ -56,11 +56,11 @@ function createTemplate (data){
 }
 
 
-var Pool = new Pool(config);
+var pool = new Pool(config);
 //database
 app.get('/db', function(req, res){
     // make a select request
-    Pool.query('select * from article', function(err, result){
+    pool.query('select * from article', function(err, result){
        if(err) {
            res.status(500).send(err.toString());
        } else{

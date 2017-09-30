@@ -89,7 +89,7 @@ app.get ('/counter', function(req, res){
 // express framework url mapping
 app.get('/articles/:articleName', function (req, res){
     
-    pool.query("select * from article WHERE title =' "+ req.params.articleName + "'", function(err, result){
+    pool.query("select * from article WHERE id =' "+ req.params.articleName + "'", function(err, result){
         if(err){
             res.status(500).send(err.toString());
         }else if(result.rows.length === 0){

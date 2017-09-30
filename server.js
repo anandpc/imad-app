@@ -62,7 +62,7 @@ app.get('/db', function(req, res){
     // make a select request
     pool.query('select * from article', function(err, result){
        if(err) {
-           res.status(501).send(err.toString());
+           res.status(500).send(err.toString());
        } else{
            res.send(JSON.stringify(result));
        }

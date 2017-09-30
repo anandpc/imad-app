@@ -60,7 +60,7 @@ var pool = new Pool(config);
 //database
 app.get('/db', function(req, res){
     // make a select request
-    pool.query('select * from article', function(err, result){
+    pool.query('SELECT * FROM article', function(err, result){
        if(err) {
            res.status(500).send(err.toString());
        } else{
